@@ -1,0 +1,13 @@
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* disable annoying bootstrap click effects */
+*:hover, *:focus, *:active {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+option {
+  background-color: white;
+}
