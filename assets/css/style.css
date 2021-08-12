@@ -1,13 +1,35 @@
 * {
   font-family: 'Titillium Web', sans-serif;
+  box-sizing: border-box !important;
 }
 
 /* disable annoying bootstrap click effects */
-*:hover, *:focus, *:active {
-    box-shadow: none !important;
-    outline: 0 !important;
+*:hover,
+*:focus,
+*:active {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+*::selection {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 option {
   background-color: white;
+}
+
+.darken {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.content {
+  min-height: 100%;
+  min-width: 100%;
 }

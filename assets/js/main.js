@@ -63,3 +63,14 @@ document.getElementById('generate').addEventListener('click', () => {
 document.getElementById('country').addEventListener('change', () => {
   this.generate();
 });
+
+document.getElementById('copy').addEventListener('click', () => {
+  let dni = document.getElementById("dni");
+
+  this.generate();
+
+  dni.select();
+  dni.setSelectionRange(0, 99999);
+
+  document.execCommand("copy");
+});
