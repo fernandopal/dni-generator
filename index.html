@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
+    <!-- Website Title -->
     <title>DNI/NIF number generator</title>
+
     <!-- Meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/ico" href="https://fernandopal.es/img/logo.jpg" />
     <meta name="keywords" content="dni, nif, nie, cif, random, generator, dnis, validator, valid, free, validate, info, documento, document, identity, identidad, identidade, español, españa, spanish, spain, new, number, numbers, portugal, portuguese" />
     <meta name="author" content="fernandopal, mail@fernandopal.es" />
     <meta name="copyright" content="Fernando Palomo Moreno" />
@@ -32,73 +35,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDJCQ1YXZL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MDJCQ1YXZL');
-    </script>
+    <!-- Global Stylesheet -->
+    <!-- <link rel="stylesheet" href="/src/assets/style.css" /> -->
   </head>
-  <body class="bg-dark text-light text-center position-relative">
-    <div class="position-absolute top-0 darken p-2 w-100 text-uppercase">
-      &gt;&nbsp;
-      <a href="https://www.fernandopal.es" class="text-decoration-none">portfolio</a>
-      &nbsp;&bullet;&nbsp;
-      <a href="https://www.linkedin.com/in/fernandopm00" class="text-decoration-none">linkedin</a>
-      &nbsp;&bullet;&nbsp;
-      <a href="https://github.com/fernandopal" class="text-decoration-none">github</a>
-      &nbsp;&lt;
-    </div>
-    
-    <div class="container h-100">
-      <div class="row justify-content-md-center h-100">
-        <div class="col-sm-12 col-md-10 col-lg-6 col-xl-5">
-          <div class="content d-flex justify-content-center align-items-center align-self-center">
-            <div>
-              <h1 class="text-light">Random DNI/NIF Generator</h1>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <input id="dni" class="form-control form-control-lg text-center border-0 rounded-1" type="text" value="" aria-label="Dni output field" aria-describedby="copy" readonly />
-                  <button class="btn btn-primary btn-sm btn-secondary fs-5" type="button" id="copy">Gen & Copy</button>
-                </div>
-              </div>
+  <body class="bg-dark text-light text-center">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="bg-dark text-light text-center position-relative h-100"></div>
 
-              <div class="container-fluid p-0 mt-2">
-                <div class="row">
-                  <div class="col-md-3 pe-md-1 pb-2">
-                    <select class="form-select bg-secondary border-secondary" aria-label="Select a country to generate the DNI number" name="country" id="country">
-                      <option value="ES" selected>Spain</option>
-                      <option value="PT">Portugal</option>
-                    </select>
-                  </div>
-                  <div class="col-md-9 ps-md-1">
-                    <button id="generate" class="btn btn-secondary text-center form-control">Generate</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="position-absolute bottom-0 darken p-2 w-100">
-      <p class="text-secondary fs-5 h-100 m-0">Made by <a class="text-decoration-none" href="https://fernandopal.es">Fernando Palomo Moreno</a></p>
-    </div>
-
-    <!-- JS -->
-    <script src="./assets/js/main.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="/src/index.tsx" type="module"></script>
   </body>
 </html>
