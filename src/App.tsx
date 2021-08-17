@@ -8,11 +8,11 @@ import { generate } from './NIF';
 const App: Component<{}> = () => {
   const [getCountry, setCountry] = createSignal('ES');
   const [isNewNifOnCopyChecked, setNewNifOnCopy] = createSignal(true);
-  const [getNif, setNif] = createSignal(generate(getCountry));
+  const [getNif, setNif] = createSignal(generate(getCountry()));
 
   //Generate NIF
   const handleClickGenerate = () => {
-    setNif(generate(getCountry));
+    setNif(generate(getCountry()));
   };
 
   const handleSelectionChange = e => {
@@ -26,7 +26,7 @@ const App: Component<{}> = () => {
 
   //Generate a new NIF & copy it to clipboard
   const handleClickCopy = () => {
-    if (isNewNifOnCopyChecked) {
+    if (isNewNifOnCopyChecked()) {
       //Call the function to generate a new NIF
       handleClickGenerate();
     }
