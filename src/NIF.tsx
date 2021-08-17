@@ -35,9 +35,8 @@ const getDniChar = (dni) => {
   return letter;
 }
 
-const generate = (/**analytics*/) => {
-  let countryField = (document.getElementById('country') as HTMLInputElement);
-  let country = countryField != undefined ? countryField.value : 'ES';
+const generate = (country) => {
+  country = country != undefined ? country : 'ES';
   let dni = '';
   switch (country) {
     case 'ES':
@@ -51,11 +50,6 @@ const generate = (/**analytics*/) => {
       dni = numbers + control;
       break;
   }
-
-  /**analytics.track('ClickGenerate', {
-    category: 'Buttons',
-    label: 'Clicked Generate Button'
-  });*/
 
   return dni;
 }

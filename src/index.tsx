@@ -2,16 +2,5 @@ import 'bootstrap/scss/bootstrap.scss';
 import './assets/style.css';
 import { render } from 'solid-js/web';
 import App from './App';
-// import Analytics from 'analytics';
-// import googleAnalytics from '@analytics/google-analytics';
 
-// const analytics = Analytics({
-//   app: 'nif-generator-solid',
-//   plugins: [
-//     googleAnalytics({
-//       trackingId: 'G-MDJCQ1YXZL',
-//     }),
-//   ],
-// });
-
-render(() => <App /**analytics={analytics}*/ />, document.getElementById('root'));
+render(() => <App />, document.getElementById('root'));
