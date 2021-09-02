@@ -35,7 +35,7 @@ const getDniChar = (dni) => {
   return letter;
 }
 
-const generate = (country) => {
+const generateNIF = (country) => {
   country = country != undefined ? country : 'ES';
   let dni = '';
   switch (country) {
@@ -54,4 +54,4 @@ const generate = (country) => {
   return dni;
 }
 
-export { generate };
+export { generateNIF };

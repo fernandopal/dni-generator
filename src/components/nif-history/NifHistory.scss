@@ -1,0 +1,21 @@
+$margin-raduis: 0.25rem;
+
+
+.nif-history-container {
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #ced4da;
+		border-radius: 0 $margin-raduis $margin-raduis 0;
+    
+		&:hover {
+			background: #DC3545;
+		}
+	}
+}

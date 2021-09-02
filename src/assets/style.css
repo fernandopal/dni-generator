@@ -21,7 +21,7 @@ option {
 }
 
 .darken {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 
 html,

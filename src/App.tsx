@@ -3,47 +3,29 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Button from './components/buttons/Button';
 import InputButton from './components/buttons/InputButton';
-import { generate } from './NIF';
+import NifHistory from './components/nif-history/NifHistory';
+import { generateNIF } from './NIF';
 
 const App: Component<{}> = () => {
-  const [getCountry, setCountry] = createSignal('ES');
+  const [getCountry, setCountry] = createSignal('ES'); //By default the country is set to Spain
   const [isNewNifOnCopyChecked, setNewNifOnCopy] = createSignal(true);
-  const [getNif, setNif] = createSignal(generate(getCountry()));
+  const [getNif, setNif] = createSignal(generateNIF(getCountry()));
+  const [getNifHistory, setNifHistory] = createSignal([]);
 
   //Generate NIF
-  const handleClickGenerate = () => {
-    setNif(generate(getCountry()));
-  };
+  const handleClickGenerate = () => setNif(generateNIF(getCountry())) && saveNif();
 
-  const handleSelectionChange = e => {
-    setCountry(e.target.value);
-    handleClickGenerate();
-  };
+  //Generate new nif on country change
+  const handleSelectionChange = e => setCountry(e.target.value) && handleClickGenerate();
 
-  const handleToggleAutoNif = () => {
-    setNewNifOnCopy(!isNewNifOnCopyChecked());
-  };
+  //Toggle on/off auto generation on nif copy
+  const handleToggleAutoNif = () => setNewNifOnCopy(!isNewNifOnCopyChecked());
+
+  //Save NIF to history
+  const saveNif = () => setNifHistory([getNif(), ...getNifHistory()]);
 
   //Generate a new NIF & copy it to clipboard
-  const handleClickCopy = () => {
-    if (isNewNifOnCopyChecked()) {
-      //Call the function to generate a new NIF
-      handleClickGenerate();
-    }
-
-    //Temporal imput to copy the nif
-    let tmp = document.createElement('input');
-    tmp.value = getNif();
-    document.body.appendChild(tmp);
-
-    //Copy the nif
-    tmp.setSelectionRange(0, 99999);
-    tmp.select();
-    document.execCommand('copy');
-
-    //Remove the temporal input
-    document.body.removeChild(tmp);
-  };
+  const handleClickCopy = () => isNewNifOnCopyChecked() && handleClickGenerate();
 
   return (
     <div className="bg-dark text-light text-center position-relative h-100">
@@ -59,7 +41,7 @@ const App: Component<{}> = () => {
                 <div className="row">
                   <div className="col">
                     <div className="form-group">
-                      <InputButton btnText="Copy" inputVal={getNif()} onclick={handleClickCopy} />
+                      <InputButton inputVal={getNif()} onclick={handleClickCopy} />
                     </div>
                   </div>
                 </div>
@@ -89,6 +71,8 @@ const App: Component<{}> = () => {
           </div>
         </div>
       </div>
+
+      <NifHistory nifHistory={getNifHistory() as string[]} />
 
       <Footer />
     </div>
